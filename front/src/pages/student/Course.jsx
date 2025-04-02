@@ -5,9 +5,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Course = ({ course }) => {
+  if (!course) {
+    return <div className="text-red-500">Invalid Course Data</div>;
+  }
+
   return (
     <Link to={`/course-detail/${course._id}`}>
-      <Card className="overflow-hidden rounded-lg dark:bg-gray-800 bg-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+      <Card className="overflow-hidden rounded-lg dark:bg-gray-800 bg-white shadow-md hover:shadow-2xl transform hover:scale-105 transition-all duration-300 ease-in-out">
         <div className="relative">
           <img
             src={course.courseThumbnail}
@@ -16,7 +20,7 @@ const Course = ({ course }) => {
           />
         </div>
         <CardContent className="px-5 py-4 space-y-3">
-          <h1 className="hover:underline font-bold text-lg truncate">
+          <h1 className="font-bold text-lg truncate w-full hover:underline">
             {course.courseTitle}
           </h1>
           <div className="flex items-center justify-between">
@@ -26,21 +30,19 @@ const Course = ({ course }) => {
                   src={
                     course.creator?.photoUrl || "https://github.com/shadcn.png"
                   }
-                  alt="@shadcn"
+                  alt={course.creator?.name}
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <h1 className="font-medium text-sm">{course.creator?.name}</h1>
+              <h1 className="font-medium text-sm text-gray-700 dark:text-gray-300">
+                {course.creator?.name}
+              </h1>
             </div>
-            <Badge
-              className={
-                "bg-blue-600 text-white px-2 py-1 text-xs rounded-full"
-              }
-            >
+            <Badge className="bg-blue-600 text-white px-2 py-1 text-xs rounded-full">
               {course.courseLevel}
             </Badge>
           </div>
-          <div className="text-lg font-bold">
+          <div className="text-lg font-bold text-green-600">
             <span>₹{course.coursePrice}</span>
           </div>
         </CardContent>
