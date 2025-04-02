@@ -14,7 +14,8 @@ const Courses = () => {
       {
         _id: "1",
         courseTitle: "React for Beginners",
-        courseThumbnail: "https://via.placeholder.com/300",
+        courseThumbnail:
+          "https://tse4.mm.bing.net/th?id=OIP.T5ByYpZtMw6GllZVi1vzcAHaEK&pid=Api",
         creator: {
           name: "John Doe",
           photoUrl: "https://via.placeholder.com/50",
@@ -25,7 +26,8 @@ const Courses = () => {
       {
         _id: "2",
         courseTitle: "Advanced Node.js",
-        courseThumbnail: "https://via.placeholder.com/300",
+        courseThumbnail:
+          "https://tse2.mm.bing.net/th?id=OIP.fKWoMnZEazMmTFqV1HmdYwHaD3&pid=Api",
         creator: {
           name: "Jane Smith",
           photoUrl: "https://via.placeholder.com/50",
@@ -36,7 +38,8 @@ const Courses = () => {
       {
         _id: "3",
         courseTitle: "Full Stack Development",
-        courseThumbnail: "https://via.placeholder.com/300",
+        courseThumbnail:
+          "https://tse4.mm.bing.net/th/id/OIP.W1cuTmUeYUroiCRt3umDlwHaD4?pid=Api",
         creator: {
           name: "Robert Brown",
           photoUrl: "https://via.placeholder.com/50",
@@ -47,7 +50,8 @@ const Courses = () => {
       {
         _id: "4",
         courseTitle: "UI/UX Design Fundamentals",
-        courseThumbnail: "https://via.placeholder.com/300",
+        courseThumbnail:
+          "https://tse2.mm.bing.net/th?id=OIP.dcv4RnU-g4NQy2WTMJq7yAHaE3&pid=Api",
         creator: {
           name: "Emily White",
           photoUrl: "https://via.placeholder.com/50",
@@ -57,6 +61,7 @@ const Courses = () => {
       },
     ],
   };
+
   if (isError) return <h1>Some error occurred while fetching courses.</h1>;
 
   return (
